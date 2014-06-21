@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+  <title>Calculator(plain)</title>
+</h:head>
+<h:body>
+  <h:form>
+    <h:messages/>
+    <table>
+      <tr>
+        <td>
+          <h:inputText id="left" label="左辺" value="#{calcView.calc.left}"
+                       style="#{faceUtils.valid(component.clientId)}" required="true">
+            <f:validateLongRange maximum="99999"/>
+          </h:inputText>
+        </td>
+        <td>＋</td>
+        <td>
+          <h:inputText id="right" label="右辺" value="#{calcView.calc.right}"
+                       style="#{faceUtils.valid(component.clientId)}" required="true">
+            <f:validateLongRange maximum="99999"/>
+          </h:inputText>
+        </td>
+      </tr>
+      <tr>
+        <td><h:message for="left"/>#{flash.left}</td>
+        <td>&nbsp;</td>
+        <td><h:message for="right"/>#{flash.right}</td>
+      </tr>
+    </table>
+    <p>
+      <h:commandButton value="計算" action="#{calcView.doCalculation}"/>
+      <h:commandButton value="もどる" action="/index" immediate="true"/>
+    </p>
+    <h:dataTable value="#{calcView.results}" var="calc">
+      <h:column>
+        <h:outputText value="#{calc.left}"/> +
+        <h:outputText value="#{calc.right}"/> =
+        <h:outputText value="#{calc.answer}"/>
+      </h:column>
+    </h:dataTable>
+  </h:form>
+</h:body>
+</html>

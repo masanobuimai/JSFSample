@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3174927698">
+    <data-source source="LOCAL" name="Derby - sample;create=true@localhost [2]" uuid="62c7aa2d-ed5b-4572-b088-497181c01a9d">
+      <driver-ref>derby.remote</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby://localhost:1527/sample;create=true</jdbc-url>
+      <user-name>sa</user-name>
+      <libraries>
+        <library>
+          <url>file://C:/Program Files/Java/jdk1.7.0_55/db/lib/derbyclient.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+
